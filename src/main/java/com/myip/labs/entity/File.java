@@ -1,13 +1,8 @@
 package com.myip.labs.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -15,8 +10,10 @@ import javax.persistence.ManyToOne;
 @RequiredArgsConstructor
 public class File {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     @NonNull
-    private String id;
+    private String fileId;
     @NonNull
     private String url;
     @NonNull

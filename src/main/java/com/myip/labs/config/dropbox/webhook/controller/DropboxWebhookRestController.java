@@ -14,6 +14,7 @@ import java.net.URI;
 @RestController
 @RequestMapping("/dropbox/webhook")
 @Log4j2
+
 public class DropboxWebhookRestController {
     private final DeltaUsersParserService deltaUsersParserService;
 

@@ -33,10 +33,6 @@ public class Ad {
     @Column
     private String telnum;
 
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private User user;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "ad")
     private List<File> files;
 }

@@ -35,7 +35,7 @@ public class FileServiceImpl implements FileService {
     public List<File> findAll() {
         return fileRepo.findAll()
                 .stream()
-                .map(file -> new File(file.getUrl(), file.getFilename(), file.getAd().getId().toString()))
+                .map(file -> new File(file.getFileId(), file.getUrl(),file.getFilename()))
                 .collect(Collectors.toList());
     }
 
