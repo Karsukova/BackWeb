@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AdRepository extends JpaRepository<Ad, Integer> {
-    List<Ad> findAllById(Integer id);
-
-   // Object createAd(int i, String s, String s1, String s2, String s3, int i1);
+    List<Ad> findByTextContainingIgnoreCase(String text);
 }
