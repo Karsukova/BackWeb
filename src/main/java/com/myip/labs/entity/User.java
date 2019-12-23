@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -32,6 +33,9 @@ public class User implements UserDetails {
 
     @Column
     private String password;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<Pocket> pockets;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
